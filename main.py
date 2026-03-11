@@ -1,9 +1,8 @@
 from flask import request, jsonify
-from flask_cors import CORS
 from config import app, db
 from models import Contact
 
-CORS(app)
+
 @app.route("/contacts", methods=["GET"])
 def get_contacts():
     contacts = Contact.query.all()
