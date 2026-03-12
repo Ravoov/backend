@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from config import db
 
 
@@ -6,6 +8,7 @@ class Contact(db.Model):
     name = db.Column(db.String(100), nullable=False)
     memory_score = db.Column(db.Integer, nullable=False)
     sleep_score = db.Column(db.Integer, nullable = False)
+    date = db.Column(db.DateTime, default=datetime.utcnow, nullable=True)
     def to_json(self):
         return {
             "id": self.id,
