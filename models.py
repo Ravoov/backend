@@ -12,4 +12,5 @@ class Contact(db.Model):
             "name": self.name,
             "sleep_score": self.sleep_score,
             "memory_score": self.memory_score,
+            "date": self.date.strftime("%Y-%m-%d %H:%M") if self.date else None
         }
